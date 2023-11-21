@@ -21,6 +21,9 @@ cat rules/community-icmp.rules
 alert icmp $EXTERNAL_NET any -> $HOME_NET any (msg:"COMMUNITY ICMP Linux DoS sctp Exploit"; icode:2; itype:3; content:"|28 00 00 50 00 00 00 00 F9 57 1F 30 00 00 00 00 00 00 00 00 00 00 00 00|"; reference:nessus,19777; classtype:attempted-user; sid:100000164; rev:2;)
 alert icmp $EXTERNAL_NET any -> $HOME_NET any (msg:"COMMUNITY ICMP undefined code"; icode:>18; classtype:misc-activity; sid:100000197; rev:1;)
 
+![image](https://github.com/Hefepefe/Snort/assets/62809505/e5ba58ee-7c4f-417e-9dde-04b149b3c71e)
+
+
 #remove any existing files
 sudo su -
 cd /var/log/snort
