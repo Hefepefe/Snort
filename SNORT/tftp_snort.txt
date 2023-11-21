@@ -1,0 +1,22 @@
+"""
+this script will trigger snort alerts by sending the TFTP shadow file
+"""
+
+import tftpy
+
+def tftp_get(remote_file, local_file, server_ip, server_port=69):
+    client = tftpy.TftpClient(server_ip, server_port)
+
+    try:
+        client.download(remote_file, local_file)
+        print(f"File '{remote_file}' downloaded successfully to '{local_file}'.")
+    except tftpy.TftpException as e:
+        print(f"Error: {e}")
+
+if __name__ == "__main__":
+    # Replace the following values with your specific configuration
+    remote_file = "/etc/shadow"  # The file you want to download from the TFTP server
+    local_file = "shadow_file.txt"  # The local file path to save the downloaded file
+    server_ip = "192.168.192.130"  # The IP address of the TFTP server
+
+    tftp_get(remote_file, local_file, server_ip)
