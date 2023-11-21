@@ -28,5 +28,7 @@ rm *
 #Run snort
 snort -c /etc/snort/snort.conf
 
-#On an other machine on the network, use a script to send tftp packets to our machine 
+snort -q -A console -c /etc/snort/rules/local.rules
+
+#On an other machine on the network, use a script to send tftp and icmp packets to our machine 
 
